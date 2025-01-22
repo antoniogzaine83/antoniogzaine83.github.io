@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>HTML Geolocation</h1>
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
+<body id='demo' onload="getLocation()">
 <script>
 const x = document.getElementById("demo");
 
@@ -15,13 +8,12 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.watchPosition(showPosition);
   } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    x.innerHTML = "0,0";
   }
 }
     
 function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
+    x.innerHTML=position.coords.latitude +"," + position.coords.longitude;
 }
 </script>
 
