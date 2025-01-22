@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body id='demo' onload="getLocation()">
+<head>
 <script>
 const x = document.getElementById("demo");
 
@@ -16,6 +16,10 @@ function showPosition(position) {
     x.innerHTML=position.coords.latitude +"," + position.coords.longitude;
 }
 </script>
+</head>
+<body id='demo' onload="getLocation()">
+
+
 
 </body>
 </html>
