@@ -13,15 +13,21 @@ function getLocation() {
 }
     
 function showPosition(position) {
-	const x = document.getElementById("demo");
-    x.innerHTML=position.coords.latitude +"," + position.coords.longitude;
+	const x = document.getElementById("x");
+	const y = document.getElementById("y");
+    x.value=position.coords.latitude;
+	y.value=position.coords.longitude;
 }
 </script>
 </head>
 <body id='demo' onload="getLocation()">
-
-
-
+<form action="http://10.4.16.218/proyecto/recibe.php" method="post">
+			<p>Su nombre: <input type="text" name="nombre" /></p>
+			<p>Su edad: <input type="text" name="edad" /></p>
+			<p>X: <input type="text" id="x" /></p>
+			<p>Y: <input type="text" id="y" /></p>
+			<p><input type="submit" /></p>
+		</form>	
 </body>
 </html>
 
